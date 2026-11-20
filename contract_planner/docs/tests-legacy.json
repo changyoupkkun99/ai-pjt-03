@@ -1,0 +1,251 @@
+{
+  "suite": "legacy",
+  "exit_code": 0,
+  "cases": [
+    {
+      "name": "test_f2008_only_cited_source_number_title_and_original_url_are_rendered",
+      "status": "passed",
+      "seconds": 3.428
+    },
+    {
+      "name": "test_f2008_uncited_answer_displays_explicit_no_citation_notice",
+      "status": "passed",
+      "seconds": 1.408
+    },
+    {
+      "name": "test_f2009_submit_a_then_b_then_return_to_a_preserves_separate_conversations",
+      "status": "passed",
+      "seconds": 1.563
+    },
+    {
+      "name": "test_f2011_actual_card_button_navigates_to_its_item_chat",
+      "status": "passed",
+      "seconds": 1.411
+    },
+    {
+      "name": "test_f2012_missing_legal_key_and_no_discovery_results_are_visible",
+      "status": "passed",
+      "seconds": 1.393
+    },
+    {
+      "name": "test_f2012_fresh_real_database_initializes_empty_and_provides_guidance",
+      "status": "passed",
+      "seconds": 1.563
+    },
+    {
+      "name": "test_nf2004_unexpected_model_error_does_not_expose_secrets_prompt_or_trace",
+      "status": "passed",
+      "seconds": 1.416
+    },
+    {
+      "name": "test_f2016_actual_source_snapshot_type_and_public_url_are_rendered[law-\\ubc95\\ub839\\xb7\\uc870\\ubb38]",
+      "status": "passed",
+      "seconds": 1.412
+    },
+    {
+      "name": "test_f2016_actual_source_snapshot_type_and_public_url_are_rendered[prec-\\ud310\\ub840]",
+      "status": "passed",
+      "seconds": 1.413
+    },
+    {
+      "name": "test_f2016_actual_source_snapshot_type_and_public_url_are_rendered[expc-\\ubc95\\ub839\\ud574\\uc11d\\ub840]",
+      "status": "passed",
+      "seconds": 1.424
+    },
+    {
+      "name": "test_official_snapshot_contains_at_least_100_unique_actual_articles",
+      "status": "passed",
+      "seconds": 0.096
+    },
+    {
+      "name": "test_nested_article_paragraphs_items_and_subitems_are_preserved",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_api_credential_is_injected_and_identical_query_uses_cache",
+      "status": "passed",
+      "seconds": 0.013
+    },
+    {
+      "name": "test_missing_legal_key_is_clear_without_a_network_request",
+      "status": "passed",
+      "seconds": 0.005
+    },
+    {
+      "name": "test_response_urls_are_sanitized",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_cache_handles_empty_results_and_corrupt_files",
+      "status": "passed",
+      "seconds": 0.012
+    },
+    {
+      "name": "test_unsupported_answers_and_invented_citations_are_blocked[payload0]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_unsupported_answers_and_invented_citations_are_blocked[payload1]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_unsupported_answers_and_invented_citations_are_blocked[payload2]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_unsupported_answers_and_invented_citations_are_blocked[payload3]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_only_actually_cited_evidence_is_returned",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_no_evidence_does_not_call_answer_model",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_graph_has_exact_retrieve_generate_path",
+      "status": "passed",
+      "seconds": 0.218
+    },
+    {
+      "name": "test_selected_original_is_indexed_even_if_llm_excludes_every_candidate",
+      "status": "passed",
+      "seconds": 0.21
+    },
+    {
+      "name": "test_item_and_mode_conversations_are_isolated",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_discovery_filters_unknown_ids_and_duplicates",
+      "status": "passed",
+      "seconds": 0.209
+    },
+    {
+      "name": "test_missing_gms_key_is_handled_before_a_model_call",
+      "status": "passed",
+      "seconds": 0.005
+    },
+    {
+      "name": "test_json_parser_accepts_fences_and_rejects_non_objects",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_discovery_normalizes_long_conditions_and_caches_selection",
+      "status": "passed",
+      "seconds": 0.011
+    },
+    {
+      "name": "test_korean_chunking_preserves_tail_and_limits",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_stable_chunk_ids_include_both_item_and_document",
+      "status": "passed",
+      "seconds": 0.004
+    },
+    {
+      "name": "test_reindex_does_not_add_chunks_or_repeat_embedding",
+      "status": "passed",
+      "seconds": 0.271
+    },
+    {
+      "name": "test_rechunk_removes_only_stale_chunks_of_its_document",
+      "status": "passed",
+      "seconds": 0.328
+    },
+    {
+      "name": "test_distinct_chunks_of_same_url_survive_deduplication",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_two_collection_search_keeps_selected_metadata_and_topk[similarity]",
+      "status": "passed",
+      "seconds": 0.266
+    },
+    {
+      "name": "test_two_collection_search_keeps_selected_metadata_and_topk[mmr]",
+      "status": "passed",
+      "seconds": 0.272
+    },
+    {
+      "name": "test_embedding_model_change_requires_a_separate_index",
+      "status": "passed",
+      "seconds": 0.132
+    },
+    {
+      "name": "test_full_snapshot_sync_prunes_retired_items_but_partial_upsert_does_not",
+      "status": "passed",
+      "seconds": 0.345
+    },
+    {
+      "name": "test_f2012_empty_external_collection_has_explicit_guidance",
+      "status": "passed",
+      "seconds": 1.419
+    },
+    {
+      "name": "test_nf2006_long_retry_after_is_not_retried_early[120]",
+      "status": "passed",
+      "seconds": 0.007
+    },
+    {
+      "name": "test_nf2006_long_retry_after_is_not_retried_early[http-date]",
+      "status": "passed",
+      "seconds": 0.006
+    },
+    {
+      "name": "test_f2010_invalid_risk_category_is_not_accepted_as_supported",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_nf2002_legal_cache_is_scoped_to_the_api_endpoint",
+      "status": "passed",
+      "seconds": 0.013
+    },
+    {
+      "name": "test_nf2006_short_retry_after_and_backoff_succeed_with_bounded_calls[2]",
+      "status": "passed",
+      "seconds": 0.009
+    },
+    {
+      "name": "test_nf2006_short_retry_after_and_backoff_succeed_with_bounded_calls[invalid-header]",
+      "status": "passed",
+      "seconds": 0.009
+    },
+    {
+      "name": "test_ui_displays_disclaimer_and_missing_ai_key_without_traceback",
+      "status": "passed",
+      "seconds": 1.309
+    },
+    {
+      "name": "test_ui_item_switch_restores_only_that_items_history",
+      "status": "passed",
+      "seconds": 1.403
+    },
+    {
+      "name": "test_ui_empty_snapshot_provides_prepare_command",
+      "status": "passed",
+      "seconds": 1.321
+    },
+    {
+      "name": "test_discovered_item_navigation_selects_its_law_and_chat",
+      "status": "passed",
+      "seconds": 1.383
+    }
+  ]
+}

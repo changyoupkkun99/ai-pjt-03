@@ -1,0 +1,20 @@
+{
+  "collected_at": "2026-10-23T09:40:05+09:00",
+  "api_mode": "example",
+  "metadata_count": 697,
+  "document_count": 709,
+  "document_types": {
+    "law": 697,
+    "prec": 8,
+    "expc": 4
+  },
+  "source": "법제처 국가법령정보센터",
+  "api_base_url": "https://www.law.go.kr/DRF/",
+  "terms_url": "https://open.law.go.kr/LSO/information/guide.do",
+  "note": "공식 API 수집본. 시행일 필터 적용. 운영 시 승인된 본인 OC 인증값으로 갱신 필요.",
+  "network_calls": 0,
+  "indexed_counts": {
+    "realestate_law_meta": 697,
+    "realestate_law_docs": 899
+  }
+}

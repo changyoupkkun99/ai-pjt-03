@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "id": 1835235,
+      "name": "Daejeon",
+      "latitude": 36.35022,
+      "longitude": 127.3848,
+      "elevation": 42.0,
+      "feature_code": "PPLA",
+      "country_code": "KR",
+      "admin1_id": 1835224,
+      "timezone": "Asia/Seoul",
+      "population": 1441203,
+      "country_id": 1835841,
+      "country": "South Korea",
+      "admin1": "Daejeon"
+    },
+    {
+      "id": 1835219,
+      "name": "Daejeon",
+      "latitude": 34.70931,
+      "longitude": 127.26647,
+      "elevation": 26.0,
+      "feature_code": "PPL",
+      "country_code": "KR",
+      "admin1_id": 1845788,
+      "admin2_id": 1842780,
+      "admin3_id": 8691481,
+      "timezone": "Asia/Seoul",
+      "country_id": 1835841,
+      "country": "South Korea",
+      "admin1": "Jeollanam-do",
+      "admin2": "Goheung-gun",
+      "admin3": "Duwon-myeon"
+    },
+    {
+      "id": 1835236,
+      "name": "Daejeon",
+      "latitude": 35.66061,
+      "longitude": 127.4244,
+      "elevation": 434.0,
+      "feature_code": "PPL",
+      "country_code": "KR",
+      "admin1_id": 1845789,
+      "admin2_id": 1846111,
+      "admin3_id": 6876281,
+      "timezone": "Asia/Seoul",
+      "country_id": 1835841,
+      "country": "South Korea",
+      "admin1": "Jeollabuk-do",
+      "admin2": "Jinan-gun",
+      "admin3": "Baegun-myeon"
+    }
+  ],
+  "generationtime_ms": 0.16105175
+}

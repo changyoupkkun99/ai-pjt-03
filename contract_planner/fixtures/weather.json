@@ -1,0 +1,33 @@
+{
+  "latitude": 36.35,
+  "longitude": 127.375,
+  "generationtime_ms": 0.0591278076171875,
+  "utc_offset_seconds": 32400,
+  "timezone": "Asia/Seoul",
+  "timezone_abbreviation": "GMT+9",
+  "elevation": 59.0,
+  "daily_units": {
+    "time": "iso8601",
+    "precipitation_probability_max": "%"
+  },
+  "daily": {
+    "time": [
+      "2026-11-20",
+      "2026-11-21",
+      "2026-11-22",
+      "2026-11-23",
+      "2026-11-24",
+      "2026-11-25",
+      "2026-11-26"
+    ],
+    "precipitation_probability_max": [
+      53,
+      0,
+      0,
+      87,
+      76,
+      0,
+      10
+    ]
+  }
+}

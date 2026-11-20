@@ -1,0 +1,16 @@
+fastapi==0.141.1
+uvicorn==0.52.4
+langgraph==1.2.10
+langchain-core==1.6.0
+langsmith==0.10.17
+pydantic==2.13.5
+python-dotenv==1.2.3
+requests==2.34.2
+typing-extensions==4.16.0
+httpx>=0.27,<1
+pillow>=12.3,<13
+winrt-Windows.Media.Ocr==4!10.0.28000.2957; sys_platform == "win32"
+winrt-Windows.Globalization==4!10.0.28000.2957; sys_platform == "win32"
+winrt-Windows.Graphics.Imaging==4!10.0.28000.2957; sys_platform == "win32"
+winrt-Windows.Storage.Streams==4!10.0.28000.2957; sys_platform == "win32"
+winrt-Windows.Foundation==4!10.0.28000.2957; sys_platform == "win32"

@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #172e30;
+  background: #f4f5f0;
+  font:
+    16px/1.65 "Inter",
+    "Malgun Gothic",
+    sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  padding: 16px max(5vw, 20px);
+  background: #fff;
+  border-bottom: 1px solid #d7dfd7;
+}
+header small {
+  margin-left: auto;
+  color: #40655c;
+}
+nav {
+  display: flex;
+  gap: 5px;
+}
+.brand {
+  color: #193d38;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.brand span {
+  display: inline-grid;
+  place-content: center;
+  width: 32px;
+  height: 32px;
+  background: #215a4c;
+  color: white;
+  border-radius: 8px;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  color: #214c42;
+  cursor: pointer;
+  background: white;
+  border: 1px solid #bccbc2;
+  padding: 7px 13px;
+  border-radius: 7px;
+}
+button:hover,
+nav button[aria-current] {
+  background: #e6efe8;
+}
+nav button,
+.quiet {
+  border-color: transparent;
+  background: transparent;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #49795a;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+main {
+  max-width: 980px;
+  margin: auto;
+  padding: 52px 28px;
+}
+.heading,
+.actions,
+.pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.section-label {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #426b59;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.055em;
+  margin: 8px 0 20px;
+}
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+}
+p {
+  margin: 12px 0;
+}
+#ask,
+article,
+dialog {
+  background: #fff;
+  border: 1px solid #ccd7ce;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+dialog {
+  margin: auto;
+  width: min(480px, 96%);
+}
+dialog::backdrop {
+  background: #182f2d77;
+}
+label {
+  display: block;
+  font-weight: 650;
+}
+textarea,
+input {
+  display: block;
+  width: 100%;
+  border: 1px solid #b8c8bd;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 6px 0 14px;
+}
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+.primary {
+  background: #215b48;
+  color: white;
+  border-color: #215b48;
+  font-weight: 700;
+}
+.primary:hover {
+  background: #174735;
+}
+.minor,
+small,
+summary {
+  color: #53685f;
+  font-size: 0.86rem;
+}
+.user {
+  margin: 20px 0 0 auto;
+  width: fit-content;
+  max-width: 90%;
+  background: #e0ebe0;
+  padding: 10px 16px;
+  border-radius: 12px;
+}
+.answer {
+  white-space: pre-line;
+}
+.slot {
+  border-left: 4px solid #48795d;
+  padding: 12px 16px;
+  background: #f0f6ed;
+  margin: 16px 0;
+}
+.warn {
+  color: #834522;
+}
+.trace {
+  font-size: 0.84rem;
+  margin: 4px 0 4px 12px;
+}
+.warn,
+.trace {
+  overflow-wrap: anywhere;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+details {
+  border-top: 1px solid #e1e7e0;
+  padding: 10px 0;
+}
+a {
+  color: #256657;
+}
+#notice {
+  color: #733c26;
+  font-weight: 600;
+}
+#examples button {
+  font-size: 0.83rem;
+  margin: 2px;
+}
+.empty {
+  padding: 24px 0;
+  color: #54675d;
+}
+.pair label {
+  flex: 1;
+}
+.plan-buttons {
+  display: flex;
+  gap: 8px;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+@media (max-width: 650px) {
+  header {
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    gap: 0;
+  }
+  nav button {
+    font-size: 0.9rem;
+  }
+  .heading {
+    align-items: flex-start;
+  }
+  main {
+    padding: 28px 14px;
+  }
+  #ask,
+  article {
+    padding: 16px;
+  }
+  .actions {
+    flex-wrap: wrap;
+  }
+  .primary {
+    margin-left: auto;
+  }
+}

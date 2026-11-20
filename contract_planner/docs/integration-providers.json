@@ -1,0 +1,10 @@
+{
+  "anthropic": {
+    "status": "NO_CREDENTIAL",
+    "generation_calls": 0
+  },
+  "gms": {
+    "status": "NO_CREDENTIAL",
+    "generation_calls": 0
+  }
+}

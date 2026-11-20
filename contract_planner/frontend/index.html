@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>안심계약 · 계약 점검 플래너</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reports.css" />
+    <script src="app.js" defer></script>
+    <script src="reports.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#chat"
+        ><span aria-hidden="true">⌂</span> 안심계약</a
+      >
+      <nav aria-label="서비스 메뉴">
+        <button data-view="chat" aria-current="page">계약 점검</button
+        ><button data-view="plans">저장한 일정</button
+        ><button data-view="logs">실행 기록</button>
+        <button data-view="reports">리포트 작성</button>
+      </nav>
+      <small id="mode"></small>
+    </header>
+    <main>
+      <section id="chat">
+        <div class="heading">
+          <div>
+            <p class="section-label">계약 플래너</p>
+            <h1>계약 점검을 시작하세요</h1>
+          </div>
+          <button class="quiet" id="reset">새 대화</button>
+        </div>
+        <p>
+          계약일과 가능한 시간을 알려주시면 법률 자료를 찾아 점검 일정을
+          제안합니다.
+        </p>
+        <div id="conversation" aria-live="polite"></div>
+        <form id="ask">
+          <label for="message">계약 상황</label
+          ><textarea
+            id="message"
+            required
+            maxlength="1200"
+            placeholder="예) 전세계약이 12월 31일에 끝나요. 평일 오후 6시 이후에 보증금 반환을 준비하고 싶어요."
+          ></textarea>
+          <div class="actions">
+            <div id="examples">
+              <button
+                type="button"
+                data-example="전세계약이 12월 31일에 끝나는데 보증금 반환을 준비해야 해. 평일에는 오후 6시 이후만 시간이 있어."
+              >
+                보증금 반환
+              </button>
+              <button
+                type="button"
+                data-example="계약 특약에 ‘임차인이 모든 수선비를 부담한다’고 적혀 있어. 위험과 근거를 확인해줘."
+              >
+                특약 검토
+              </button>
+            </div>
+            <button class="primary" id="send">계획 요청 ↗</button>
+          </div>
+        </form>
+        <p class="minor">
+          개인정보를 제외하고 입력하세요. 제공되는 법률 정보는 전문가의 자문을
+          대신할 수 없습니다.
+        </p>
+      </section>
+      <section id="plans" hidden>
+        <p class="section-label">계약 플래너</p>
+        <h1>저장한 일정</h1>
+        <div id="planList"></div>
+      </section>
+      <section id="logs" hidden>
+        <p class="section-label">계약 플래너</p>
+        <h1>실행 기록</h1>
+        <button id="loadLogs">기록 새로고침</button
+        ><button class="quiet" id="clearLogs">현재 대화 기록 삭제</button>
+        <div id="logList"></div>
+      </section>
+      <section id="reports" hidden>
+        <div class="heading">
+          <div>
+            <p class="section-label">안심계약</p>
+            <h1>계약 검토 리포트</h1>
+          </div>
+          <label class="report-library"
+            >내 보고서
+            <select id="report-picker">
+              <option value="">새 보고서</option>
+            </select></label
+          >
+        </div>
+        <div class="report-grid">
+          <section class="report-panel">
+            <h2>계약 문구와 위험 설명</h2>
+            <form id="report-input">
+              <label for="photo-engine">사진 판독 방식</label>
+              <select id="photo-engine">
+                <option value="gms" selected>SSAFY GMS · GPT-6 비전</option>
+                <option value="local">이 PC · Windows OCR</option>
+              </select>
+              <label for="report-photo">계약서 사진 넣기</label>
+              <input id="report-photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-help" />
+              <p id="photo-help" class="minor">사진을 선택하면 SSAFY GMS로 전송합니다. 개인정보는 먼저 가려 주세요. JPG · PNG · WebP, 최대 12MB.</p>
+              <img id="photo-preview" alt="선택한 계약서 사진" hidden />
+              <p id="photo-status" role="status"></p>
+              <label for="report-clauses">계약 문구 · 특약</label>
+              <textarea
+                id="report-clauses"
+                rows="6"
+                required
+                maxlength="12000"
+                placeholder="확인할 조항을 한 줄씩 붙여넣으세요. 이름과 계좌번호는 제외해 주세요."
+              ></textarea>
+              <label class="report-opt"
+                ><input type="checkbox" id="report-ai" /> AI 수정·확인 요청 추가
+                (점검할 계약 문구를 AI 서비스에 전송)</label
+              >
+              <div class="actions">
+                <button id="report-example" type="button">예시 넣기</button
+                ><button id="report-analyze" class="primary">
+                  분석하고 초안 만들기
+                </button>
+              </div>
+              <p class="minor">
+                초안과 입력 원문은 이 PC의 현재 대화에 저장됩니다.
+              </p>
+            </form>
+            <div id="report-findings"></div>
+          </section>
+          <section class="report-paper">
+            <h2>검토 보고서</h2>
+            <div id="report-empty">
+              왼쪽에서 계약 문구를 분석하면 여기에 항목별 수정·자료 요청 초안이
+              표시됩니다.
+            </div>
+            <form id="report-edit" hidden>
+              <label for="report-title">보고서 제목</label
+              ><input id="report-title" maxlength="120" required />
+              <p class="report-scope">
+                입력 문구의 점검 결과입니다. 소유권·시세·보증 가입 여부는 별도
+                자료로 확인해야 합니다.
+              </p>
+              <p id="report-unverified" class="minor" hidden></p>
+              <div id="report-requests"></div>
+              <div class="actions">
+                <button type="button" id="report-print">인쇄 / PDF</button
+                ><button type="submit" class="primary">보고서 저장</button>
+              </div>
+              <button type="button" class="quiet" id="report-follow">
+                후속 점검 일정 계획하기 →
+              </button>
+            </form>
+          </section>
+        </div>
+        <div id="report-status" role="status"></div>
+        <div id="print-report"></div>
+      </section>
+      <div id="notice" role="status"></div>
+    </main>
+    <dialog id="editor">
+      <form id="edit">
+        <h2>일정 수정</h2>
+        <label>제목<input name="title" maxlength="150" required /></label>
+        <label>점검일<input type="date" name="day" required /></label>
+        <div class="pair">
+          <label>시작<input type="time" name="start" required /></label>
+          <label>종료<input type="time" name="end" required /></label>
+        </div>
+        <label
+          >점검 내용<textarea name="notes" maxlength="2400"></textarea>
+        </label>
+        <div class="actions">
+          <button type="button" id="cancel">취소</button
+          ><button class="primary">수정 저장</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

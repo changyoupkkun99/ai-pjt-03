@@ -1,0 +1,2751 @@
+[
+  {
+    "scenario": "조건 충족",
+    "input": "전세계약이 12월 31일에 끝나는데 보증금 반환을 준비해야 해. 평일에는 오후 6시 이후만 시간이 있어.",
+    "expected_status": "ready",
+    "expected_replans": 0,
+    "matched": true,
+    "elapsed_ms": 696.28,
+    "result": {
+      "intent": "plan",
+      "conditions": {
+        "topic": "return",
+        "contract_type": "전세",
+        "kind": "law",
+        "deadline": "2026-12-31",
+        "start": "18:00",
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "answer": "2026-11-20 18:00~18:30에 보증금 반환 준비 일정을 제안합니다. 사용자 기한 2026-12-31 이내, 점검 30분 확보. 해당 일자의 공휴일 목록과 조문 시행일을 확인했습니다.\n계약서의 만료일·보증금 대조 → 임대인과 주고받은 통지·회신 정리 → 반환 방법과 미확인 사항 기록. 주택임대차보호법 제3조의2 (보증금의 회수) 원문 확인. 사용자 기한 2026-12-31. 공휴일 목록 대조.\n이 일정은 개인 준비 시간입니다. 법적 통지 기한과 기관 방문 가능 시간은 별도 확인이 필요합니다.\n법률 근거는 2026-10-23 수집본 기준입니다. 계약일의 현행 원문을 확인하세요.",
+      "sources": [
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0%EC%9D%982",
+          "id": "law:001248:000302",
+          "title": "주택임대차보호법 제3조의2 (보증금의 회수)",
+          "kind": "law",
+          "text": "제3조의2(보증금의 회수)\n① 임차인(제3조제2항 및 제3항의 법인을 포함한다. 이하 같다)이 임차주택에 대하여 보증금반환청구소송의 확정판결이나 그 밖에 이에 준하는 집행권원(執行權原)에 따라서 경매를 신청하는 경우에는 집행개시(執行開始)요건에 관한 「민사집행법」 제41조에도 불구하고 반대의무(反對義務)의 이행이나 이행의 제공을 집행개시의 요건으로 하지 아니한다.\n② 제3조제1항ㆍ제2항 또는 제3항의 대항요건(對抗要件)과 임대차계약증서(제3조제2항 및 제3항의 경우에는 법인과 임대인 사이의 임대차계약증서를 말한다)상의 확정일자(確定日字)를 갖춘 임차인은 「민사집행법」에 따른 경매 또는 「국세징수법」에 따른 공매(公賣)를 할 때에 임차주택(대지를 포함한다)의 환가대금(換價代金)에서 후순위권리자(後順位權利者)나 그 밖의 채권자보다 우선하여 보증금을 변제(辨濟)받을 권리가 있다.\n③ 임차인은 임차주택을 양수인에게 인도하지 아니하면 제2항에 따른 보증금을 받을 수 없다.\n④ 제2항 또는 제7항에 따른 우선변제의 순위와 보증금에 대하여 이의가 있는 이해관계인은 경매법원이나 체납처",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+          "id": "law:001248:000400",
+          "title": "주택임대차보호법 제4조 (임대차기간 등)",
+          "kind": "law",
+          "text": "제4조(임대차기간 등)\n① 기간을 정하지 아니하거나 2년 미만으로 정한 임대차는 그 기간을 2년으로 본다. 다만, 임차인은 2년 미만으로 정한 기간이 유효함을 주장할 수 있다.\n② 임대차기간이 끝난 경우에도 임차인이 보증금을 반환받을 때까지는 임대차관계가 존속되는 것으로 본다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C6%EC%A1%B0",
+          "id": "law:001248:000600",
+          "title": "주택임대차보호법 제6조 (계약의 갱신)",
+          "kind": "law",
+          "text": "제6조(계약의 갱신)\n① 임대인이 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간에 임차인에게 갱신거절(更新拒絶)의 통지를 하지 아니하거나 계약조건을 변경하지 아니하면 갱신하지 아니한다는 뜻의 통지를 하지 아니한 경우에는 그 기간이 끝난 때에 전 임대차와 동일한 조건으로 다시 임대차한 것으로 본다. 임차인이 임대차기간이 끝나기 2개월 전까지 통지하지 아니한 경우에도 또한 같다.\n② 제1항의 경우 임대차의 존속기간은 2년으로 본다.\n③ 2기(期)의 차임액(借賃額)에 달하도록 연체하거나 그 밖에 임차인으로서의 의무를 현저히 위반한 임차인에 대하여는 제1항을 적용하지 아니한다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "title": "Nager.Date",
+          "url": "https://date.nager.at/api/v3/PublicHolidays/2026/KR",
+          "basis": "공개 API 저장 응답 2026-11-20",
+          "tool": "holidays"
+        }
+      ],
+      "errors": [],
+      "rejected": [],
+      "status": "ready",
+      "attempts": 0,
+      "draft": {
+        "title": "보증금 반환 준비",
+        "day": "2026-11-20",
+        "start": "18:00",
+        "end": "18:30",
+        "notes": "계약서의 만료일·보증금 대조 → 임대인과 주고받은 통지·회신 정리 → 반환 방법과 미확인 사항 기록. 주택임대차보호법 제3조의2 (보증금의 회수) 원문 확인. 사용자 기한 2026-12-31. 공휴일 목록 대조."
+      },
+      "jobs": [
+        "candidates",
+        "detail",
+        "holidays"
+      ],
+      "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+      "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+      "events": [
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 1,
+          "at": "2026-11-20T01:37:01.469+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 2,
+          "at": "2026-11-20T01:37:01.499+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "plan",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 3,
+          "at": "2026-11-20T01:37:01.524+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 4,
+          "at": "2026-11-20T01:37:01.554+00:00",
+          "event": "stage.start",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 5,
+          "at": "2026-11-20T01:37:01.623+00:00",
+          "event": "plan.selected",
+          "tools": [
+            "candidates",
+            "detail",
+            "holidays"
+          ]
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 6,
+          "at": "2026-11-20T01:37:01.654+00:00",
+          "event": "stage.end",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 7,
+          "at": "2026-11-20T01:37:01.683+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 8,
+          "at": "2026-11-20T01:37:01.709+00:00",
+          "event": "tool.request",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "arguments": {
+            "query": "주택임대차보호법",
+            "kind": "law"
+          }
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 9,
+          "at": "2026-11-20T01:37:01.742+00:00",
+          "event": "tool.result",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "ok": true,
+          "count": 2,
+          "cached": false,
+          "code": null,
+          "elapsed_ms": 1.62
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 10,
+          "at": "2026-11-20T01:37:01.767+00:00",
+          "event": "tool.request",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "arguments": {
+            "api_id": "276291",
+            "kind": "law",
+            "topic": "return"
+          }
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 11,
+          "at": "2026-11-20T01:37:01.801+00:00",
+          "event": "tool.result",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "ok": true,
+          "count": 3,
+          "cached": false,
+          "code": null,
+          "elapsed_ms": 7.51
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 12,
+          "at": "2026-11-20T01:37:01.841+00:00",
+          "event": "tool.request",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "arguments": {
+            "year": 2026
+          }
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 13,
+          "at": "2026-11-20T01:37:01.866+00:00",
+          "event": "tool.result",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "ok": true,
+          "count": 18,
+          "cached": false,
+          "code": null,
+          "elapsed_ms": 1.34
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 14,
+          "at": "2026-11-20T01:37:01.894+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 15,
+          "at": "2026-11-20T01:37:01.924+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 16,
+          "at": "2026-11-20T01:37:01.950+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 17,
+          "at": "2026-11-20T01:37:01.979+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 18,
+          "at": "2026-11-20T01:37:02.006+00:00",
+          "event": "constraint",
+          "day": "2026-11-20",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "기한·요일·시간·자료 조건 충족"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 19,
+          "at": "2026-11-20T01:37:02.027+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 20,
+          "at": "2026-11-20T01:37:02.048+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "9624d930-0eed-4088-8cd4-3d9777e94847",
+          "run_id": "5024f18bc4a34e7a8b370effbf84aef2",
+          "seq": 21,
+          "at": "2026-11-20T01:37:02.078+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "재계획",
+    "input": "11월 21일부터 평일 오후 6시 이후 12월 31일 계약 만료 준비",
+    "expected_status": "ready",
+    "expected_replans": 2,
+    "matched": true,
+    "elapsed_ms": 1322.18,
+    "result": {
+      "intent": "plan",
+      "conditions": {
+        "topic": "return",
+        "kind": "law",
+        "first": "2026-11-21",
+        "deadline": "2026-12-31",
+        "start": "18:00",
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "answer": "2026-11-23 18:00~18:30에 보증금 반환 준비 일정을 제안합니다. 사용자 기한 2026-12-31 이내, 점검 30분 확보. 해당 일자의 공휴일 목록과 조문 시행일을 확인했습니다.\n계약서의 만료일·보증금 대조 → 임대인과 주고받은 통지·회신 정리 → 반환 방법과 미확인 사항 기록. 주택임대차보호법 제3조의2 (보증금의 회수) 원문 확인. 사용자 기한 2026-12-31. 공휴일 목록 대조.\n이 일정은 개인 준비 시간입니다. 법적 통지 기한과 기관 방문 가능 시간은 별도 확인이 필요합니다.\n법률 근거는 2026-10-23 수집본 기준입니다. 계약일의 현행 원문을 확인하세요.",
+      "sources": [
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0%EC%9D%982",
+          "id": "law:001248:000302",
+          "title": "주택임대차보호법 제3조의2 (보증금의 회수)",
+          "kind": "law",
+          "text": "제3조의2(보증금의 회수)\n① 임차인(제3조제2항 및 제3항의 법인을 포함한다. 이하 같다)이 임차주택에 대하여 보증금반환청구소송의 확정판결이나 그 밖에 이에 준하는 집행권원(執行權原)에 따라서 경매를 신청하는 경우에는 집행개시(執行開始)요건에 관한 「민사집행법」 제41조에도 불구하고 반대의무(反對義務)의 이행이나 이행의 제공을 집행개시의 요건으로 하지 아니한다.\n② 제3조제1항ㆍ제2항 또는 제3항의 대항요건(對抗要件)과 임대차계약증서(제3조제2항 및 제3항의 경우에는 법인과 임대인 사이의 임대차계약증서를 말한다)상의 확정일자(確定日字)를 갖춘 임차인은 「민사집행법」에 따른 경매 또는 「국세징수법」에 따른 공매(公賣)를 할 때에 임차주택(대지를 포함한다)의 환가대금(換價代金)에서 후순위권리자(後順位權利者)나 그 밖의 채권자보다 우선하여 보증금을 변제(辨濟)받을 권리가 있다.\n③ 임차인은 임차주택을 양수인에게 인도하지 아니하면 제2항에 따른 보증금을 받을 수 없다.\n④ 제2항 또는 제7항에 따른 우선변제의 순위와 보증금에 대하여 이의가 있는 이해관계인은 경매법원이나 체납처",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+          "id": "law:001248:000400",
+          "title": "주택임대차보호법 제4조 (임대차기간 등)",
+          "kind": "law",
+          "text": "제4조(임대차기간 등)\n① 기간을 정하지 아니하거나 2년 미만으로 정한 임대차는 그 기간을 2년으로 본다. 다만, 임차인은 2년 미만으로 정한 기간이 유효함을 주장할 수 있다.\n② 임대차기간이 끝난 경우에도 임차인이 보증금을 반환받을 때까지는 임대차관계가 존속되는 것으로 본다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C6%EC%A1%B0",
+          "id": "law:001248:000600",
+          "title": "주택임대차보호법 제6조 (계약의 갱신)",
+          "kind": "law",
+          "text": "제6조(계약의 갱신)\n① 임대인이 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간에 임차인에게 갱신거절(更新拒絶)의 통지를 하지 아니하거나 계약조건을 변경하지 아니하면 갱신하지 아니한다는 뜻의 통지를 하지 아니한 경우에는 그 기간이 끝난 때에 전 임대차와 동일한 조건으로 다시 임대차한 것으로 본다. 임차인이 임대차기간이 끝나기 2개월 전까지 통지하지 아니한 경우에도 또한 같다.\n② 제1항의 경우 임대차의 존속기간은 2년으로 본다.\n③ 2기(期)의 차임액(借賃額)에 달하도록 연체하거나 그 밖에 임차인으로서의 의무를 현저히 위반한 임차인에 대하여는 제1항을 적용하지 아니한다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "title": "Nager.Date",
+          "url": "https://date.nager.at/api/v3/PublicHolidays/2026/KR",
+          "basis": "공개 API 저장 응답 2026-11-20",
+          "tool": "holidays"
+        }
+      ],
+      "errors": [],
+      "rejected": [
+        {
+          "day": "2026-11-21",
+          "reason": "가능한 요일과 다릅니다."
+        },
+        {
+          "day": "2026-11-22",
+          "reason": "가능한 요일과 다릅니다."
+        }
+      ],
+      "status": "ready",
+      "attempts": 2,
+      "draft": {
+        "title": "보증금 반환 준비",
+        "day": "2026-11-23",
+        "start": "18:00",
+        "end": "18:30",
+        "notes": "계약서의 만료일·보증금 대조 → 임대인과 주고받은 통지·회신 정리 → 반환 방법과 미확인 사항 기록. 주택임대차보호법 제3조의2 (보증금의 회수) 원문 확인. 사용자 기한 2026-12-31. 공휴일 목록 대조."
+      },
+      "jobs": [
+        "candidates",
+        "detail",
+        "holidays"
+      ],
+      "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+      "run_id": "e95d48938f0e42049436aea67f0f702e",
+      "events": [
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 1,
+          "at": "2026-11-20T01:37:02.159+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 2,
+          "at": "2026-11-20T01:37:02.187+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "plan",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 3,
+          "at": "2026-11-20T01:37:02.210+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 4,
+          "at": "2026-11-20T01:37:02.229+00:00",
+          "event": "stage.start",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 5,
+          "at": "2026-11-20T01:37:02.254+00:00",
+          "event": "plan.selected",
+          "tools": [
+            "candidates",
+            "detail",
+            "holidays"
+          ]
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 6,
+          "at": "2026-11-20T01:37:02.282+00:00",
+          "event": "stage.end",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 7,
+          "at": "2026-11-20T01:37:02.309+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 8,
+          "at": "2026-11-20T01:37:02.339+00:00",
+          "event": "tool.request",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "arguments": {
+            "query": "주택임대차보호법",
+            "kind": "law"
+          }
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 9,
+          "at": "2026-11-20T01:37:02.366+00:00",
+          "event": "tool.result",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "ok": true,
+          "count": 2,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.11
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 10,
+          "at": "2026-11-20T01:37:02.385+00:00",
+          "event": "tool.request",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "arguments": {
+            "api_id": "276291",
+            "kind": "law",
+            "topic": "return"
+          }
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 11,
+          "at": "2026-11-20T01:37:02.407+00:00",
+          "event": "tool.result",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "ok": true,
+          "count": 3,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.11
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 12,
+          "at": "2026-11-20T01:37:02.439+00:00",
+          "event": "tool.request",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "arguments": {
+            "year": 2026
+          }
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 13,
+          "at": "2026-11-20T01:37:02.469+00:00",
+          "event": "tool.result",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "ok": true,
+          "count": 18,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.1
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 14,
+          "at": "2026-11-20T01:37:02.497+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 15,
+          "at": "2026-11-20T01:37:02.533+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 16,
+          "at": "2026-11-20T01:37:02.564+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 17,
+          "at": "2026-11-20T01:37:02.595+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 18,
+          "at": "2026-11-20T01:37:02.624+00:00",
+          "event": "constraint",
+          "day": "2026-11-21",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "가능한 요일과 다릅니다."
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 19,
+          "at": "2026-11-20T01:37:02.648+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 20,
+          "at": "2026-11-20T01:37:02.679+00:00",
+          "event": "stage.start",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 21,
+          "at": "2026-11-20T01:37:02.711+00:00",
+          "event": "replan",
+          "attempt": 1,
+          "day": "2026-11-22",
+          "reason": "가능한 요일과 다릅니다."
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 22,
+          "at": "2026-11-20T01:37:02.743+00:00",
+          "event": "stage.end",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 23,
+          "at": "2026-11-20T01:37:02.773+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 24,
+          "at": "2026-11-20T01:37:02.799+00:00",
+          "event": "tool.reused",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 25,
+          "at": "2026-11-20T01:37:02.826+00:00",
+          "event": "tool.reused",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 26,
+          "at": "2026-11-20T01:37:02.849+00:00",
+          "event": "tool.reused",
+          "tool": "holidays",
+          "input_id": "b46e3630849f"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 27,
+          "at": "2026-11-20T01:37:02.874+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 28,
+          "at": "2026-11-20T01:37:02.895+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 29,
+          "at": "2026-11-20T01:37:02.917+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 30,
+          "at": "2026-11-20T01:37:02.943+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 31,
+          "at": "2026-11-20T01:37:02.966+00:00",
+          "event": "constraint",
+          "day": "2026-11-22",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "가능한 요일과 다릅니다."
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 32,
+          "at": "2026-11-20T01:37:02.994+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 33,
+          "at": "2026-11-20T01:37:03.021+00:00",
+          "event": "stage.start",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 34,
+          "at": "2026-11-20T01:37:03.046+00:00",
+          "event": "replan",
+          "attempt": 2,
+          "day": "2026-11-23",
+          "reason": "가능한 요일과 다릅니다."
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 35,
+          "at": "2026-11-20T01:37:03.074+00:00",
+          "event": "stage.end",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 36,
+          "at": "2026-11-20T01:37:03.098+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 37,
+          "at": "2026-11-20T01:37:03.122+00:00",
+          "event": "tool.reused",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 38,
+          "at": "2026-11-20T01:37:03.144+00:00",
+          "event": "tool.reused",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 39,
+          "at": "2026-11-20T01:37:03.170+00:00",
+          "event": "tool.reused",
+          "tool": "holidays",
+          "input_id": "b46e3630849f"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 40,
+          "at": "2026-11-20T01:37:03.207+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 41,
+          "at": "2026-11-20T01:37:03.232+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 42,
+          "at": "2026-11-20T01:37:03.257+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 43,
+          "at": "2026-11-20T01:37:03.281+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 44,
+          "at": "2026-11-20T01:37:03.306+00:00",
+          "event": "constraint",
+          "day": "2026-11-23",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "기한·요일·시간·자료 조건 충족"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 45,
+          "at": "2026-11-20T01:37:03.333+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 46,
+          "at": "2026-11-20T01:37:03.364+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "bedc634c-4586-4781-9b5f-a942c1b52b47",
+          "run_id": "e95d48938f0e42049436aea67f0f702e",
+          "seq": 47,
+          "at": "2026-11-20T01:37:03.394+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "재계획 상한",
+    "input": "11월 20일부터 12월 31일 계약 만료 준비. 오후 6시부터 오후 6시 10분까지",
+    "expected_status": "limit",
+    "expected_replans": 3,
+    "matched": true,
+    "elapsed_ms": 1560.4,
+    "result": {
+      "intent": "plan",
+      "conditions": {
+        "topic": "return",
+        "kind": "law",
+        "first": "2026-11-20",
+        "deadline": "2026-12-31",
+        "start": "18:00",
+        "end": "18:10"
+      },
+      "answer": "재계획 상한에 도달했습니다. 가용 시간 안에 점검을 마칠 수 없습니다. 가능한 요일이나 시간을 조정해 주세요.",
+      "sources": [
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0%EC%9D%982",
+          "id": "law:001248:000302",
+          "title": "주택임대차보호법 제3조의2 (보증금의 회수)",
+          "kind": "law",
+          "text": "제3조의2(보증금의 회수)\n① 임차인(제3조제2항 및 제3항의 법인을 포함한다. 이하 같다)이 임차주택에 대하여 보증금반환청구소송의 확정판결이나 그 밖에 이에 준하는 집행권원(執行權原)에 따라서 경매를 신청하는 경우에는 집행개시(執行開始)요건에 관한 「민사집행법」 제41조에도 불구하고 반대의무(反對義務)의 이행이나 이행의 제공을 집행개시의 요건으로 하지 아니한다.\n② 제3조제1항ㆍ제2항 또는 제3항의 대항요건(對抗要件)과 임대차계약증서(제3조제2항 및 제3항의 경우에는 법인과 임대인 사이의 임대차계약증서를 말한다)상의 확정일자(確定日字)를 갖춘 임차인은 「민사집행법」에 따른 경매 또는 「국세징수법」에 따른 공매(公賣)를 할 때에 임차주택(대지를 포함한다)의 환가대금(換價代金)에서 후순위권리자(後順位權利者)나 그 밖의 채권자보다 우선하여 보증금을 변제(辨濟)받을 권리가 있다.\n③ 임차인은 임차주택을 양수인에게 인도하지 아니하면 제2항에 따른 보증금을 받을 수 없다.\n④ 제2항 또는 제7항에 따른 우선변제의 순위와 보증금에 대하여 이의가 있는 이해관계인은 경매법원이나 체납처",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+          "id": "law:001248:000400",
+          "title": "주택임대차보호법 제4조 (임대차기간 등)",
+          "kind": "law",
+          "text": "제4조(임대차기간 등)\n① 기간을 정하지 아니하거나 2년 미만으로 정한 임대차는 그 기간을 2년으로 본다. 다만, 임차인은 2년 미만으로 정한 기간이 유효함을 주장할 수 있다.\n② 임대차기간이 끝난 경우에도 임차인이 보증금을 반환받을 때까지는 임대차관계가 존속되는 것으로 본다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C6%EC%A1%B0",
+          "id": "law:001248:000600",
+          "title": "주택임대차보호법 제6조 (계약의 갱신)",
+          "kind": "law",
+          "text": "제6조(계약의 갱신)\n① 임대인이 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간에 임차인에게 갱신거절(更新拒絶)의 통지를 하지 아니하거나 계약조건을 변경하지 아니하면 갱신하지 아니한다는 뜻의 통지를 하지 아니한 경우에는 그 기간이 끝난 때에 전 임대차와 동일한 조건으로 다시 임대차한 것으로 본다. 임차인이 임대차기간이 끝나기 2개월 전까지 통지하지 아니한 경우에도 또한 같다.\n② 제1항의 경우 임대차의 존속기간은 2년으로 본다.\n③ 2기(期)의 차임액(借賃額)에 달하도록 연체하거나 그 밖에 임차인으로서의 의무를 현저히 위반한 임차인에 대하여는 제1항을 적용하지 아니한다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        }
+      ],
+      "errors": [],
+      "rejected": [
+        {
+          "day": "2026-11-20",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "day": "2026-11-21",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "day": "2026-11-22",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "day": "2026-11-23",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        }
+      ],
+      "status": "limit",
+      "attempts": 3,
+      "draft": {},
+      "jobs": [
+        "candidates",
+        "detail",
+        "holidays"
+      ],
+      "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+      "run_id": "697f7b9a02b54e22a9992b16727b477e",
+      "events": [
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 1,
+          "at": "2026-11-20T01:37:03.481+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 2,
+          "at": "2026-11-20T01:37:03.510+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "plan",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 3,
+          "at": "2026-11-20T01:37:03.537+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 4,
+          "at": "2026-11-20T01:37:03.561+00:00",
+          "event": "stage.start",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 5,
+          "at": "2026-11-20T01:37:03.582+00:00",
+          "event": "plan.selected",
+          "tools": [
+            "candidates",
+            "detail",
+            "holidays"
+          ]
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 6,
+          "at": "2026-11-20T01:37:03.610+00:00",
+          "event": "stage.end",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 7,
+          "at": "2026-11-20T01:37:03.633+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 8,
+          "at": "2026-11-20T01:37:03.658+00:00",
+          "event": "tool.request",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "arguments": {
+            "query": "주택임대차보호법",
+            "kind": "law"
+          }
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 9,
+          "at": "2026-11-20T01:37:03.681+00:00",
+          "event": "tool.result",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "ok": true,
+          "count": 2,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.14
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 10,
+          "at": "2026-11-20T01:37:03.705+00:00",
+          "event": "tool.request",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "arguments": {
+            "api_id": "276291",
+            "kind": "law",
+            "topic": "return"
+          }
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 11,
+          "at": "2026-11-20T01:37:03.730+00:00",
+          "event": "tool.result",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "ok": true,
+          "count": 3,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.1
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 12,
+          "at": "2026-11-20T01:37:03.757+00:00",
+          "event": "tool.request",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "arguments": {
+            "year": 2026
+          }
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 13,
+          "at": "2026-11-20T01:37:03.781+00:00",
+          "event": "tool.result",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "ok": true,
+          "count": 18,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.11
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 14,
+          "at": "2026-11-20T01:37:03.804+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 15,
+          "at": "2026-11-20T01:37:03.828+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 16,
+          "at": "2026-11-20T01:37:03.854+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 17,
+          "at": "2026-11-20T01:37:03.882+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 18,
+          "at": "2026-11-20T01:37:03.903+00:00",
+          "event": "constraint",
+          "day": "2026-11-20",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 19,
+          "at": "2026-11-20T01:37:03.924+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 20,
+          "at": "2026-11-20T01:37:03.952+00:00",
+          "event": "stage.start",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 21,
+          "at": "2026-11-20T01:37:03.973+00:00",
+          "event": "replan",
+          "attempt": 1,
+          "day": "2026-11-21",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 22,
+          "at": "2026-11-20T01:37:03.994+00:00",
+          "event": "stage.end",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 23,
+          "at": "2026-11-20T01:37:04.016+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 24,
+          "at": "2026-11-20T01:37:04.040+00:00",
+          "event": "tool.reused",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 25,
+          "at": "2026-11-20T01:37:04.058+00:00",
+          "event": "tool.reused",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 26,
+          "at": "2026-11-20T01:37:04.078+00:00",
+          "event": "tool.reused",
+          "tool": "holidays",
+          "input_id": "b46e3630849f"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 27,
+          "at": "2026-11-20T01:37:04.109+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 28,
+          "at": "2026-11-20T01:37:04.130+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 29,
+          "at": "2026-11-20T01:37:04.158+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 30,
+          "at": "2026-11-20T01:37:04.181+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 31,
+          "at": "2026-11-20T01:37:04.201+00:00",
+          "event": "constraint",
+          "day": "2026-11-21",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 32,
+          "at": "2026-11-20T01:37:04.226+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 33,
+          "at": "2026-11-20T01:37:04.251+00:00",
+          "event": "stage.start",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 34,
+          "at": "2026-11-20T01:37:04.276+00:00",
+          "event": "replan",
+          "attempt": 2,
+          "day": "2026-11-22",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 35,
+          "at": "2026-11-20T01:37:04.302+00:00",
+          "event": "stage.end",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 36,
+          "at": "2026-11-20T01:37:04.326+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 37,
+          "at": "2026-11-20T01:37:04.348+00:00",
+          "event": "tool.reused",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 38,
+          "at": "2026-11-20T01:37:04.374+00:00",
+          "event": "tool.reused",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 39,
+          "at": "2026-11-20T01:37:04.406+00:00",
+          "event": "tool.reused",
+          "tool": "holidays",
+          "input_id": "b46e3630849f"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 40,
+          "at": "2026-11-20T01:37:04.424+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 41,
+          "at": "2026-11-20T01:37:04.450+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 42,
+          "at": "2026-11-20T01:37:04.472+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 43,
+          "at": "2026-11-20T01:37:04.501+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 44,
+          "at": "2026-11-20T01:37:04.538+00:00",
+          "event": "constraint",
+          "day": "2026-11-22",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 45,
+          "at": "2026-11-20T01:37:04.573+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 46,
+          "at": "2026-11-20T01:37:04.624+00:00",
+          "event": "stage.start",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 47,
+          "at": "2026-11-20T01:37:04.640+00:00",
+          "event": "replan",
+          "attempt": 3,
+          "day": "2026-11-23",
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 48,
+          "at": "2026-11-20T01:37:04.663+00:00",
+          "event": "stage.end",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 49,
+          "at": "2026-11-20T01:37:04.683+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 50,
+          "at": "2026-11-20T01:37:04.703+00:00",
+          "event": "tool.reused",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 51,
+          "at": "2026-11-20T01:37:04.719+00:00",
+          "event": "tool.reused",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 52,
+          "at": "2026-11-20T01:37:04.752+00:00",
+          "event": "tool.reused",
+          "tool": "holidays",
+          "input_id": "b46e3630849f"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 53,
+          "at": "2026-11-20T01:37:04.773+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 54,
+          "at": "2026-11-20T01:37:04.793+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 55,
+          "at": "2026-11-20T01:37:04.816+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 56,
+          "at": "2026-11-20T01:37:04.841+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 57,
+          "at": "2026-11-20T01:37:04.870+00:00",
+          "event": "constraint",
+          "day": "2026-11-23",
+          "start": "18:00",
+          "required_minutes": 30,
+          "reason": "가용 시간 안에 점검을 마칠 수 없습니다."
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 58,
+          "at": "2026-11-20T01:37:04.897+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 59,
+          "at": "2026-11-20T01:37:04.926+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "ce73c23c-95ec-4a81-8627-c87883f8856a",
+          "run_id": "697f7b9a02b54e22a9992b16727b477e",
+          "seq": 60,
+          "at": "2026-11-20T01:37:04.949+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "Tool 실패",
+    "input": "2027-01-03부터 2027-01-10 계약 만료 준비",
+    "expected_status": "unverified",
+    "expected_replans": 0,
+    "matched": true,
+    "elapsed_ms": 729.36,
+    "result": {
+      "intent": "plan",
+      "conditions": {
+        "topic": "return",
+        "kind": "law",
+        "first": "2027-01-03",
+        "deadline": "2027-01-10"
+      },
+      "answer": "해당 점검일의 법령 시행 정보, 공휴일 또는 요청한 지역의 예보를 확인할 수 없습니다.",
+      "sources": [
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0%EC%9D%982",
+          "id": "law:001248:000302",
+          "title": "주택임대차보호법 제3조의2 (보증금의 회수)",
+          "kind": "law",
+          "text": "제3조의2(보증금의 회수)\n① 임차인(제3조제2항 및 제3항의 법인을 포함한다. 이하 같다)이 임차주택에 대하여 보증금반환청구소송의 확정판결이나 그 밖에 이에 준하는 집행권원(執行權原)에 따라서 경매를 신청하는 경우에는 집행개시(執行開始)요건에 관한 「민사집행법」 제41조에도 불구하고 반대의무(反對義務)의 이행이나 이행의 제공을 집행개시의 요건으로 하지 아니한다.\n② 제3조제1항ㆍ제2항 또는 제3항의 대항요건(對抗要件)과 임대차계약증서(제3조제2항 및 제3항의 경우에는 법인과 임대인 사이의 임대차계약증서를 말한다)상의 확정일자(確定日字)를 갖춘 임차인은 「민사집행법」에 따른 경매 또는 「국세징수법」에 따른 공매(公賣)를 할 때에 임차주택(대지를 포함한다)의 환가대금(換價代金)에서 후순위권리자(後順位權利者)나 그 밖의 채권자보다 우선하여 보증금을 변제(辨濟)받을 권리가 있다.\n③ 임차인은 임차주택을 양수인에게 인도하지 아니하면 제2항에 따른 보증금을 받을 수 없다.\n④ 제2항 또는 제7항에 따른 우선변제의 순위와 보증금에 대하여 이의가 있는 이해관계인은 경매법원이나 체납처",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+          "id": "law:001248:000400",
+          "title": "주택임대차보호법 제4조 (임대차기간 등)",
+          "kind": "law",
+          "text": "제4조(임대차기간 등)\n① 기간을 정하지 아니하거나 2년 미만으로 정한 임대차는 그 기간을 2년으로 본다. 다만, 임차인은 2년 미만으로 정한 기간이 유효함을 주장할 수 있다.\n② 임대차기간이 끝난 경우에도 임차인이 보증금을 반환받을 때까지는 임대차관계가 존속되는 것으로 본다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C6%EC%A1%B0",
+          "id": "law:001248:000600",
+          "title": "주택임대차보호법 제6조 (계약의 갱신)",
+          "kind": "law",
+          "text": "제6조(계약의 갱신)\n① 임대인이 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간에 임차인에게 갱신거절(更新拒絶)의 통지를 하지 아니하거나 계약조건을 변경하지 아니하면 갱신하지 아니한다는 뜻의 통지를 하지 아니한 경우에는 그 기간이 끝난 때에 전 임대차와 동일한 조건으로 다시 임대차한 것으로 본다. 임차인이 임대차기간이 끝나기 2개월 전까지 통지하지 아니한 경우에도 또한 같다.\n② 제1항의 경우 임대차의 존속기간은 2년으로 본다.\n③ 2기(期)의 차임액(借賃額)에 달하도록 연체하거나 그 밖에 임차인으로서의 의무를 현저히 위반한 임차인에 대하여는 제1항을 적용하지 아니한다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        }
+      ],
+      "errors": [
+        {
+          "tool": "holidays",
+          "code": "NO_FIXTURE",
+          "message": "해당 조건으로 저장한 응답이 없습니다."
+        }
+      ],
+      "rejected": [],
+      "status": "unverified",
+      "attempts": 0,
+      "draft": {},
+      "jobs": [
+        "candidates",
+        "detail",
+        "holidays"
+      ],
+      "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+      "run_id": "91b1b3a72ab7496984570ff5179305f7",
+      "events": [
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 1,
+          "at": "2026-11-20T01:37:05.042+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 2,
+          "at": "2026-11-20T01:37:05.064+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "plan",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 3,
+          "at": "2026-11-20T01:37:05.091+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 4,
+          "at": "2026-11-20T01:37:05.121+00:00",
+          "event": "stage.start",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 5,
+          "at": "2026-11-20T01:37:05.143+00:00",
+          "event": "plan.selected",
+          "tools": [
+            "candidates",
+            "detail",
+            "holidays"
+          ]
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 6,
+          "at": "2026-11-20T01:37:05.169+00:00",
+          "event": "stage.end",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 7,
+          "at": "2026-11-20T01:37:05.191+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 8,
+          "at": "2026-11-20T01:37:05.214+00:00",
+          "event": "tool.request",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "arguments": {
+            "query": "주택임대차보호법",
+            "kind": "law"
+          }
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 9,
+          "at": "2026-11-20T01:37:05.243+00:00",
+          "event": "tool.result",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "ok": true,
+          "count": 2,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.1
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 10,
+          "at": "2026-11-20T01:37:05.271+00:00",
+          "event": "tool.request",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "arguments": {
+            "api_id": "276291",
+            "kind": "law",
+            "topic": "return"
+          }
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 11,
+          "at": "2026-11-20T01:37:05.296+00:00",
+          "event": "tool.result",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "ok": true,
+          "count": 3,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.1
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 12,
+          "at": "2026-11-20T01:37:05.322+00:00",
+          "event": "tool.request",
+          "tool": "holidays",
+          "input_id": "2eabd22107de",
+          "arguments": {
+            "year": 2027
+          }
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 13,
+          "at": "2026-11-20T01:37:05.350+00:00",
+          "event": "tool.result",
+          "tool": "holidays",
+          "input_id": "2eabd22107de",
+          "ok": false,
+          "count": 0,
+          "cached": false,
+          "code": "NO_FIXTURE",
+          "elapsed_ms": 0.39
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 14,
+          "at": "2026-11-20T01:37:05.377+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 15,
+          "at": "2026-11-20T01:37:05.403+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 16,
+          "at": "2026-11-20T01:37:05.424+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 17,
+          "at": "2026-11-20T01:37:05.461+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 18,
+          "at": "2026-11-20T01:37:05.488+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 19,
+          "at": "2026-11-20T01:37:05.555+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "85acc528-daf7-4d05-83af-1e051f8a2bbd",
+          "run_id": "91b1b3a72ab7496984570ff5179305f7",
+          "seq": 20,
+          "at": "2026-11-20T01:37:05.668+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "Tool 불필요",
+    "input": "안녕하세요",
+    "expected_status": "help",
+    "expected_replans": 0,
+    "matched": true,
+    "elapsed_ms": 186.35,
+    "result": {
+      "intent": "help",
+      "conditions": {},
+      "answer": "계약 체결일이나 만료일과 가능한 시간을 알려주세요. 특약을 입력하면 관련 조문도 찾을 수 있습니다.",
+      "sources": [],
+      "errors": [],
+      "rejected": [],
+      "status": "help",
+      "attempts": 0,
+      "draft": {},
+      "jobs": [],
+      "session_id": "bcbc4bbf-ab6b-4378-87e2-a2fa8c5c31f9",
+      "run_id": "2d396f241df14fd19162a3fb50b43a8f",
+      "events": [
+        {
+          "session_id": "bcbc4bbf-ab6b-4378-87e2-a2fa8c5c31f9",
+          "run_id": "2d396f241df14fd19162a3fb50b43a8f",
+          "seq": 1,
+          "at": "2026-11-20T01:37:05.771+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "bcbc4bbf-ab6b-4378-87e2-a2fa8c5c31f9",
+          "run_id": "2d396f241df14fd19162a3fb50b43a8f",
+          "seq": 2,
+          "at": "2026-11-20T01:37:05.799+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "help",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "bcbc4bbf-ab6b-4378-87e2-a2fa8c5c31f9",
+          "run_id": "2d396f241df14fd19162a3fb50b43a8f",
+          "seq": 3,
+          "at": "2026-11-20T01:37:05.820+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "bcbc4bbf-ab6b-4378-87e2-a2fa8c5c31f9",
+          "run_id": "2d396f241df14fd19162a3fb50b43a8f",
+          "seq": 4,
+          "at": "2026-11-20T01:37:05.849+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "bcbc4bbf-ab6b-4378-87e2-a2fa8c5c31f9",
+          "run_id": "2d396f241df14fd19162a3fb50b43a8f",
+          "seq": 5,
+          "at": "2026-11-20T01:37:05.881+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "날씨 제약",
+    "input": "대전 현장 점검 11월 20일부터 12월 31일 계약 만료. 강수확률 10% 이하",
+    "expected_status": "ready",
+    "expected_replans": 1,
+    "matched": true,
+    "elapsed_ms": 1512.82,
+    "result": {
+      "intent": "plan",
+      "conditions": {
+        "topic": "return",
+        "visit": true,
+        "kind": "law",
+        "city": "Daejeon",
+        "city_ko": "대전",
+        "first": "2026-11-20",
+        "deadline": "2026-12-31",
+        "rain": 10
+      },
+      "answer": "2026-11-21 09:00~09:30에 대전 현장 점검 일정을 제안합니다. 사용자 기한 2026-12-31 이내, 점검 30분 확보. 해당 일자의 공휴일 목록과 조문 시행일을 확인했습니다.\n계약서의 만료일·보증금 대조 → 임대인과 주고받은 통지·회신 정리 → 반환 방법과 미확인 사항 기록 → 현장에서 확인할 하자와 계약서 기재 차이 기록. 주택임대차보호법 제3조의2 (보증금의 회수) 원문 확인. 사용자 기한 2026-12-31. 공휴일 목록 대조. 일별 최대 강수확률 0.0%.\n이 일정은 개인 준비 시간입니다. 법적 통지 기한과 기관 방문 가능 시간은 별도 확인이 필요합니다.\n법률 근거는 2026-10-23 수집본 기준입니다. 계약일의 현행 원문을 확인하세요.",
+      "sources": [
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C3%EC%A1%B0%EC%9D%982",
+          "id": "law:001248:000302",
+          "title": "주택임대차보호법 제3조의2 (보증금의 회수)",
+          "kind": "law",
+          "text": "제3조의2(보증금의 회수)\n① 임차인(제3조제2항 및 제3항의 법인을 포함한다. 이하 같다)이 임차주택에 대하여 보증금반환청구소송의 확정판결이나 그 밖에 이에 준하는 집행권원(執行權原)에 따라서 경매를 신청하는 경우에는 집행개시(執行開始)요건에 관한 「민사집행법」 제41조에도 불구하고 반대의무(反對義務)의 이행이나 이행의 제공을 집행개시의 요건으로 하지 아니한다.\n② 제3조제1항ㆍ제2항 또는 제3항의 대항요건(對抗要件)과 임대차계약증서(제3조제2항 및 제3항의 경우에는 법인과 임대인 사이의 임대차계약증서를 말한다)상의 확정일자(確定日字)를 갖춘 임차인은 「민사집행법」에 따른 경매 또는 「국세징수법」에 따른 공매(公賣)를 할 때에 임차주택(대지를 포함한다)의 환가대금(換價代金)에서 후순위권리자(後順位權利者)나 그 밖의 채권자보다 우선하여 보증금을 변제(辨濟)받을 권리가 있다.\n③ 임차인은 임차주택을 양수인에게 인도하지 아니하면 제2항에 따른 보증금을 받을 수 없다.\n④ 제2항 또는 제7항에 따른 우선변제의 순위와 보증금에 대하여 이의가 있는 이해관계인은 경매법원이나 체납처",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C4%EC%A1%B0",
+          "id": "law:001248:000400",
+          "title": "주택임대차보호법 제4조 (임대차기간 등)",
+          "kind": "law",
+          "text": "제4조(임대차기간 등)\n① 기간을 정하지 아니하거나 2년 미만으로 정한 임대차는 그 기간을 2년으로 본다. 다만, 임차인은 2년 미만으로 정한 기간이 유효함을 주장할 수 있다.\n② 임대차기간이 끝난 경우에도 임차인이 보증금을 반환받을 때까지는 임대차관계가 존속되는 것으로 본다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C6%EC%A1%B0",
+          "id": "law:001248:000600",
+          "title": "주택임대차보호법 제6조 (계약의 갱신)",
+          "kind": "law",
+          "text": "제6조(계약의 갱신)\n① 임대인이 임대차기간이 끝나기 6개월 전부터 2개월 전까지의 기간에 임차인에게 갱신거절(更新拒絶)의 통지를 하지 아니하거나 계약조건을 변경하지 아니하면 갱신하지 아니한다는 뜻의 통지를 하지 아니한 경우에는 그 기간이 끝난 때에 전 임대차와 동일한 조건으로 다시 임대차한 것으로 본다. 임차인이 임대차기간이 끝나기 2개월 전까지 통지하지 아니한 경우에도 또한 같다.\n② 제1항의 경우 임대차의 존속기간은 2년으로 본다.\n③ 2기(期)의 차임액(借賃額)에 달하도록 연체하거나 그 밖에 임차인으로서의 의무를 현저히 위반한 임차인에 대하여는 제1항을 적용하지 아니한다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail"
+        },
+        {
+          "title": "Nager.Date",
+          "url": "https://date.nager.at/api/v3/PublicHolidays/2026/KR",
+          "basis": "공개 API 저장 응답 2026-11-20",
+          "tool": "holidays"
+        },
+        {
+          "title": "Open-Meteo Geocoding · GeoNames",
+          "url": "https://www.geonames.org/1835235/",
+          "basis": "공개 API 저장 응답 2026-11-20",
+          "tool": "city"
+        },
+        {
+          "title": "Open-Meteo Forecast",
+          "url": "https://api.open-meteo.com/v1/forecast?latitude=36.35022&longitude=127.3848&daily=precipitation_probability_max&timezone=Asia%2FSeoul",
+          "basis": "공개 API 저장 응답 2026-11-20",
+          "tool": "weather"
+        }
+      ],
+      "errors": [],
+      "rejected": [
+        {
+          "day": "2026-11-20",
+          "reason": "예보 강수확률 53.0%가 요청 상한을 초과합니다."
+        }
+      ],
+      "status": "ready",
+      "attempts": 1,
+      "draft": {
+        "title": "대전 현장 점검",
+        "day": "2026-11-21",
+        "start": "09:00",
+        "end": "09:30",
+        "notes": "계약서의 만료일·보증금 대조 → 임대인과 주고받은 통지·회신 정리 → 반환 방법과 미확인 사항 기록 → 현장에서 확인할 하자와 계약서 기재 차이 기록. 주택임대차보호법 제3조의2 (보증금의 회수) 원문 확인. 사용자 기한 2026-12-31. 공휴일 목록 대조. 일별 최대 강수확률 0.0%."
+      },
+      "jobs": [
+        "candidates",
+        "detail",
+        "holidays",
+        "city",
+        "weather"
+      ],
+      "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+      "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+      "events": [
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 1,
+          "at": "2026-11-20T01:37:05.956+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 2,
+          "at": "2026-11-20T01:37:05.980+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "plan",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 3,
+          "at": "2026-11-20T01:37:06.000+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 4,
+          "at": "2026-11-20T01:37:06.026+00:00",
+          "event": "stage.start",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 5,
+          "at": "2026-11-20T01:37:06.052+00:00",
+          "event": "plan.selected",
+          "tools": [
+            "candidates",
+            "detail",
+            "holidays",
+            "city",
+            "weather"
+          ]
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 6,
+          "at": "2026-11-20T01:37:06.081+00:00",
+          "event": "stage.end",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 7,
+          "at": "2026-11-20T01:37:06.109+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 8,
+          "at": "2026-11-20T01:37:06.138+00:00",
+          "event": "tool.request",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "arguments": {
+            "query": "주택임대차보호법",
+            "kind": "law"
+          }
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 9,
+          "at": "2026-11-20T01:37:06.162+00:00",
+          "event": "tool.result",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "ok": true,
+          "count": 2,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.1
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 10,
+          "at": "2026-11-20T01:37:06.190+00:00",
+          "event": "tool.request",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "arguments": {
+            "api_id": "276291",
+            "kind": "law",
+            "topic": "return"
+          }
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 11,
+          "at": "2026-11-20T01:37:06.215+00:00",
+          "event": "tool.result",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73",
+          "ok": true,
+          "count": 3,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.11
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 12,
+          "at": "2026-11-20T01:37:06.240+00:00",
+          "event": "tool.request",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "arguments": {
+            "year": 2026
+          }
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 13,
+          "at": "2026-11-20T01:37:06.271+00:00",
+          "event": "tool.result",
+          "tool": "holidays",
+          "input_id": "b46e3630849f",
+          "ok": true,
+          "count": 18,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.1
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 14,
+          "at": "2026-11-20T01:37:06.293+00:00",
+          "event": "tool.request",
+          "tool": "city",
+          "input_id": "e2194d192d25",
+          "arguments": {
+            "name": "Daejeon"
+          }
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 15,
+          "at": "2026-11-20T01:37:06.316+00:00",
+          "event": "tool.result",
+          "tool": "city",
+          "input_id": "e2194d192d25",
+          "ok": true,
+          "count": 1,
+          "cached": false,
+          "code": null,
+          "elapsed_ms": 0.81
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 16,
+          "at": "2026-11-20T01:37:06.344+00:00",
+          "event": "tool.request",
+          "tool": "weather",
+          "input_id": "bb7d038db1e8",
+          "arguments": {
+            "latitude": 36.35022,
+            "longitude": 127.3848
+          }
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 17,
+          "at": "2026-11-20T01:37:06.373+00:00",
+          "event": "tool.result",
+          "tool": "weather",
+          "input_id": "bb7d038db1e8",
+          "ok": true,
+          "count": 7,
+          "cached": false,
+          "code": null,
+          "elapsed_ms": 2.18
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 18,
+          "at": "2026-11-20T01:37:06.400+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 19,
+          "at": "2026-11-20T01:37:06.434+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 20,
+          "at": "2026-11-20T01:37:06.467+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 21,
+          "at": "2026-11-20T01:37:06.499+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 22,
+          "at": "2026-11-20T01:37:06.522+00:00",
+          "event": "constraint",
+          "day": "2026-11-20",
+          "start": "09:00",
+          "required_minutes": 30,
+          "reason": "예보 강수확률 53.0%가 요청 상한을 초과합니다."
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 23,
+          "at": "2026-11-20T01:37:06.549+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 24,
+          "at": "2026-11-20T01:37:06.578+00:00",
+          "event": "stage.start",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 25,
+          "at": "2026-11-20T01:37:06.611+00:00",
+          "event": "replan",
+          "attempt": 1,
+          "day": "2026-11-21",
+          "reason": "예보 강수확률 53.0%가 요청 상한을 초과합니다."
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 26,
+          "at": "2026-11-20T01:37:06.650+00:00",
+          "event": "stage.end",
+          "stage": "replan",
+          "label": "대안 일정 탐색"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 27,
+          "at": "2026-11-20T01:37:06.684+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 28,
+          "at": "2026-11-20T01:37:06.723+00:00",
+          "event": "tool.reused",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 29,
+          "at": "2026-11-20T01:37:06.752+00:00",
+          "event": "tool.reused",
+          "tool": "detail",
+          "input_id": "7f1aa1ee4a73"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 30,
+          "at": "2026-11-20T01:37:06.778+00:00",
+          "event": "tool.reused",
+          "tool": "holidays",
+          "input_id": "b46e3630849f"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 31,
+          "at": "2026-11-20T01:37:06.815+00:00",
+          "event": "tool.reused",
+          "tool": "city",
+          "input_id": "e2194d192d25"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 32,
+          "at": "2026-11-20T01:37:06.873+00:00",
+          "event": "tool.reused",
+          "tool": "weather",
+          "input_id": "bb7d038db1e8"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 33,
+          "at": "2026-11-20T01:37:06.907+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 34,
+          "at": "2026-11-20T01:37:06.949+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 35,
+          "at": "2026-11-20T01:37:07.001+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 36,
+          "at": "2026-11-20T01:37:07.030+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 37,
+          "at": "2026-11-20T01:37:07.061+00:00",
+          "event": "constraint",
+          "day": "2026-11-21",
+          "start": "09:00",
+          "required_minutes": 30,
+          "reason": "기한·요일·시간·자료 조건 충족"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 38,
+          "at": "2026-11-20T01:37:07.091+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 39,
+          "at": "2026-11-20T01:37:07.152+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "1eaa9e91-c260-452e-acc4-68e5a79345ee",
+          "run_id": "f59b47f41365482d9d6aeec0167a1e15",
+          "seq": 40,
+          "at": "2026-11-20T01:37:07.222+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "정보 부족",
+    "input": "보증금 반환 준비",
+    "expected_status": "clarify",
+    "expected_replans": 0,
+    "matched": true,
+    "elapsed_ms": 493.71,
+    "result": {
+      "intent": "plan",
+      "conditions": {
+        "topic": "return",
+        "kind": "law"
+      },
+      "answer": "계약일 또는 만료일을 연-월-일로 알려주세요.",
+      "sources": [],
+      "errors": [],
+      "rejected": [],
+      "status": "clarify",
+      "attempts": 0,
+      "draft": {},
+      "jobs": [],
+      "session_id": "0ef049ed-cf61-45f9-b7d6-d6ebb73663d4",
+      "run_id": "2d960f53d1a74e9b89f3fc1eb1b13249",
+      "events": [
+        {
+          "session_id": "0ef049ed-cf61-45f9-b7d6-d6ebb73663d4",
+          "run_id": "2d960f53d1a74e9b89f3fc1eb1b13249",
+          "seq": 1,
+          "at": "2026-11-20T01:37:07.472+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "0ef049ed-cf61-45f9-b7d6-d6ebb73663d4",
+          "run_id": "2d960f53d1a74e9b89f3fc1eb1b13249",
+          "seq": 2,
+          "at": "2026-11-20T01:37:07.521+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "plan",
+          "reason": "계약일 또는 만료일을 연-월-일로 알려주세요."
+        },
+        {
+          "session_id": "0ef049ed-cf61-45f9-b7d6-d6ebb73663d4",
+          "run_id": "2d960f53d1a74e9b89f3fc1eb1b13249",
+          "seq": 3,
+          "at": "2026-11-20T01:37:07.585+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "0ef049ed-cf61-45f9-b7d6-d6ebb73663d4",
+          "run_id": "2d960f53d1a74e9b89f3fc1eb1b13249",
+          "seq": 4,
+          "at": "2026-11-20T01:37:07.662+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "0ef049ed-cf61-45f9-b7d6-d6ebb73663d4",
+          "run_id": "2d960f53d1a74e9b89f3fc1eb1b13249",
+          "seq": 5,
+          "at": "2026-11-20T01:37:07.747+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  },
+  {
+    "scenario": "특약 검토",
+    "input": "특약에 보증금 반환을 포기한다고 적혀 있어",
+    "expected_status": "references",
+    "expected_replans": 0,
+    "matched": true,
+    "elapsed_ms": 759.2,
+    "result": {
+      "intent": "review",
+      "conditions": {
+        "topic": "return",
+        "kind": "law"
+      },
+      "answer": "[근거 1] 주택임대차보호법 제10조 (강행규정) 원문과 계약서 문구를 대조하세요. (모의 검토)",
+      "sources": [
+        {
+          "url": "https://www.law.go.kr/법령/%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95/%EC%A0%9C10%EC%A1%B0",
+          "id": "law:001248:001000",
+          "title": "주택임대차보호법 제10조 (강행규정)",
+          "kind": "law",
+          "text": "제10조(강행규정) 이 법에 위반된 약정(約定)으로서 임차인에게 불리한 것은 그 효력이 없다.",
+          "effective": "20260102",
+          "basis": "2회차 수집본 2026-10-23",
+          "tool": "detail",
+          "citation": 1
+        }
+      ],
+      "errors": [
+        {
+          "tool": "rag",
+          "code": "NO_INDEX",
+          "message": "2회차 벡터 색인을 연결해 주세요."
+        }
+      ],
+      "rejected": [],
+      "status": "references",
+      "attempts": 0,
+      "draft": {},
+      "jobs": [
+        "candidates",
+        "detail",
+        "rag"
+      ],
+      "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+      "run_id": "54e221569cd94582a02acf511739036f",
+      "events": [
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 1,
+          "at": "2026-11-20T01:37:07.965+00:00",
+          "event": "stage.start",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 2,
+          "at": "2026-11-20T01:37:08.004+00:00",
+          "event": "decision",
+          "actor": "rule",
+          "decision": "review",
+          "reason": "계약 요청의 키워드 및 날짜·시간 조건"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 3,
+          "at": "2026-11-20T01:37:08.025+00:00",
+          "event": "stage.end",
+          "stage": "analyze",
+          "label": "요청 분석"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 4,
+          "at": "2026-11-20T01:37:08.061+00:00",
+          "event": "stage.start",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 5,
+          "at": "2026-11-20T01:37:08.084+00:00",
+          "event": "plan.selected",
+          "tools": [
+            "candidates",
+            "detail",
+            "rag"
+          ]
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 6,
+          "at": "2026-11-20T01:37:08.111+00:00",
+          "event": "stage.end",
+          "stage": "plan",
+          "label": "도구 선택"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 7,
+          "at": "2026-11-20T01:37:08.144+00:00",
+          "event": "stage.start",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 8,
+          "at": "2026-11-20T01:37:08.171+00:00",
+          "event": "tool.request",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "arguments": {
+            "query": "주택임대차보호법",
+            "kind": "law"
+          }
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 9,
+          "at": "2026-11-20T01:37:08.195+00:00",
+          "event": "tool.result",
+          "tool": "candidates",
+          "input_id": "ce0e5334b367",
+          "ok": true,
+          "count": 2,
+          "cached": true,
+          "code": null,
+          "elapsed_ms": 0.11
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 10,
+          "at": "2026-11-20T01:37:08.221+00:00",
+          "event": "tool.request",
+          "tool": "detail",
+          "input_id": "3fd62b0b9871",
+          "arguments": {
+            "api_id": "276291",
+            "kind": "law",
+            "topic": "risk"
+          }
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 11,
+          "at": "2026-11-20T01:37:08.251+00:00",
+          "event": "tool.result",
+          "tool": "detail",
+          "input_id": "3fd62b0b9871",
+          "ok": true,
+          "count": 3,
+          "cached": false,
+          "code": null,
+          "elapsed_ms": 5.54
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 12,
+          "at": "2026-11-20T01:37:08.275+00:00",
+          "event": "tool.request",
+          "tool": "rag",
+          "input_id": "4de1b050076d",
+          "arguments": {}
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 13,
+          "at": "2026-11-20T01:37:08.306+00:00",
+          "event": "tool.result",
+          "tool": "rag",
+          "input_id": "4de1b050076d",
+          "ok": false,
+          "count": 0,
+          "cached": false,
+          "code": "NO_INDEX",
+          "elapsed_ms": 3.99
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 14,
+          "at": "2026-11-20T01:37:08.334+00:00",
+          "event": "stage.end",
+          "stage": "execute",
+          "label": "자료 조회"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 15,
+          "at": "2026-11-20T01:37:08.360+00:00",
+          "event": "stage.start",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 16,
+          "at": "2026-11-20T01:37:08.403+00:00",
+          "event": "stage.end",
+          "stage": "integrate",
+          "label": "근거 정리"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 17,
+          "at": "2026-11-20T01:37:08.429+00:00",
+          "event": "stage.start",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 18,
+          "at": "2026-11-20T01:37:08.456+00:00",
+          "event": "stage.end",
+          "stage": "judge",
+          "label": "조건 비교"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 19,
+          "at": "2026-11-20T01:37:08.482+00:00",
+          "event": "stage.start",
+          "stage": "respond",
+          "label": "답변 작성"
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 20,
+          "at": "2026-11-20T01:37:08.514+00:00",
+          "event": "llm.decision",
+          "actor": "mock",
+          "decision": "주의 필요",
+          "reason": "인용 번호·근거 존재·위험 수준 검증",
+          "supported": true
+        },
+        {
+          "session_id": "b085c220-fee0-476a-83e1-cc348e051839",
+          "run_id": "54e221569cd94582a02acf511739036f",
+          "seq": 21,
+          "at": "2026-11-20T01:37:08.572+00:00",
+          "event": "stage.end",
+          "stage": "respond",
+          "label": "답변 작성"
+        }
+      ],
+      "disclaimer": "본 서비스는 공개된 법률 자료를 기반으로 정보를 제공하며, 변호사 등 전문가의 법률 자문을 대신하지 않습니다.",
+      "data_mode": "snapshot"
+    }
+  }
+]

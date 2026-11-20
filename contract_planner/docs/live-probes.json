@@ -1,0 +1,44 @@
+[
+  {
+    "api": "law",
+    "url": "https://www.law.go.kr/DRF/lawSearch.do",
+    "at": "2026-11-20T01:31:53.655192+00:00",
+    "http_status": 200,
+    "destination_host": "www.law.go.kr",
+    "result": "AUTH_SERVER_REGISTRATION_REQUIRED"
+  },
+  {
+    "api": "prec",
+    "url": "https://www.law.go.kr/DRF/lawSearch.do",
+    "at": "2026-11-20T01:31:54.225237+00:00",
+    "http_status": 200,
+    "destination_host": "www.law.go.kr",
+    "result": "AUTH_SERVER_REGISTRATION_REQUIRED"
+  },
+  {
+    "api": "expc",
+    "url": "https://www.law.go.kr/DRF/lawSearch.do",
+    "at": "2026-11-20T01:31:54.799098+00:00",
+    "http_status": 200,
+    "destination_host": "www.law.go.kr",
+    "result": "AUTH_SERVER_REGISTRATION_REQUIRED"
+  },
+  {
+    "api": "holidays",
+    "url": "https://date.nager.at/api/v3/PublicHolidays/2026/KR",
+    "at": "2026-11-20T01:31:55.350049+00:00",
+    "http_status": 200,
+    "destination_host": "date.nager.at",
+    "count": 18,
+    "result": "verified"
+  },
+  {
+    "api": "gms_portal",
+    "url": "https://gms.ssafy.io",
+    "at": "2026-11-20T01:31:56.278915+00:00",
+    "http_status": 200,
+    "destination_host": "gms.ssafy.io",
+    "result": "public page not found",
+    "public_html_mentions_claude": false
+  }
+]

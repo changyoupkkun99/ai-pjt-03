@@ -1,0 +1,171 @@
+{
+  "suite": "planner",
+  "exit_code": 0,
+  "cases": [
+    {
+      "name": "test_conflicting_transcribed_amounts_need_review",
+      "status": "passed",
+      "seconds": 0.002
+    },
+    {
+      "name": "test_photo_to_sale_draft",
+      "status": "passed",
+      "seconds": 0.303
+    },
+    {
+      "name": "test_unreadable_photo",
+      "status": "passed",
+      "seconds": 0.205
+    },
+    {
+      "name": "test_gms_default_reads_image_and_records_usage",
+      "status": "passed",
+      "seconds": 0.247
+    },
+    {
+      "name": "test_gms_failure_never_returns_local_text",
+      "status": "passed",
+      "seconds": 0.296
+    },
+    {
+      "name": "test_gms_model_fallback_uses_requested_priority",
+      "status": "passed",
+      "seconds": 0.133
+    },
+    {
+      "name": "test_scenario[\\uc870\\uac74 \\ucda9\\uc871-\\uc804\\uc138\\uacc4\\uc57d\\uc774 12\\uc6d4 31\\uc77c\\uc5d0 \\ub05d\\ub098\\ub294\\ub370 \\ubcf4\\uc99d\\uae08 \\ubc18\\ud658\\uc744 \\uc900\\ube44\\ud574\\uc57c \\ud574. \\ud3c9\\uc77c\\uc5d0\\ub294 \\uc624\\ud6c4 6\\uc2dc \\uc774\\ud6c4\\ub9cc \\uc2dc\\uac04\\uc774 \\uc788\\uc5b4.-ready-0]",
+      "status": "passed",
+      "seconds": 0.632
+    },
+    {
+      "name": "test_scenario[\\uc7ac\\uacc4\\ud68d-11\\uc6d4 21\\uc77c\\ubd80\\ud130 \\ud3c9\\uc77c \\uc624\\ud6c4 6\\uc2dc \\uc774\\ud6c4 12\\uc6d4 31\\uc77c \\uacc4\\uc57d \\ub9cc\\ub8cc \\uc900\\ube44-ready-2]",
+      "status": "passed",
+      "seconds": 0.984
+    },
+    {
+      "name": "test_scenario[\\uc7ac\\uacc4\\ud68d \\uc0c1\\ud55c-11\\uc6d4 20\\uc77c\\ubd80\\ud130 12\\uc6d4 31\\uc77c \\uacc4\\uc57d \\ub9cc\\ub8cc \\uc900\\ube44. \\uc624\\ud6c4 6\\uc2dc\\ubd80\\ud130 \\uc624\\ud6c4 6\\uc2dc 10\\ubd84\\uae4c\\uc9c0-limit-3]",
+      "status": "passed",
+      "seconds": 1.393
+    },
+    {
+      "name": "test_scenario[Tool \\uc2e4\\ud328-2027-01-03\\ubd80\\ud130 2027-01-10 \\uacc4\\uc57d \\ub9cc\\ub8cc \\uc900\\ube44-unverified-0]",
+      "status": "passed",
+      "seconds": 0.533
+    },
+    {
+      "name": "test_scenario[Tool \\ubd88\\ud544\\uc694-\\uc548\\ub155\\ud558\\uc138\\uc694-help-0]",
+      "status": "passed",
+      "seconds": 0.243
+    },
+    {
+      "name": "test_scenario[\\ub0a0\\uc528 \\uc81c\\uc57d-\\ub300\\uc804 \\ud604\\uc7a5 \\uc810\\uac80 11\\uc6d4 20\\uc77c\\ubd80\\ud130 12\\uc6d4 31\\uc77c \\uacc4\\uc57d \\ub9cc\\ub8cc. \\uac15\\uc218\\ud655\\ub960 10% \\uc774\\ud558-ready-1]",
+      "status": "passed",
+      "seconds": 0.821
+    },
+    {
+      "name": "test_scenario[\\uc815\\ubcf4 \\ubd80\\uc871-\\ubcf4\\uc99d\\uae08 \\ubc18\\ud658 \\uc900\\ube44-clarify-0]",
+      "status": "passed",
+      "seconds": 0.242
+    },
+    {
+      "name": "test_scenario[\\ud2b9\\uc57d \\uac80\\ud1a0-\\ud2b9\\uc57d\\uc5d0 \\ubcf4\\uc99d\\uae08 \\ubc18\\ud658\\uc744 \\ud3ec\\uae30\\ud55c\\ub2e4\\uace0 \\uc801\\ud600 \\uc788\\uc5b4-references-0]",
+      "status": "passed",
+      "seconds": 0.496
+    },
+    {
+      "name": "test_followup_and_subscriber_failure",
+      "status": "passed",
+      "seconds": 0.208
+    },
+    {
+      "name": "test_tools_inputs_failures_and_cache",
+      "status": "passed",
+      "seconds": 0.158
+    },
+    {
+      "name": "test_no_secret_or_raw_exception",
+      "status": "passed",
+      "seconds": 0.455
+    },
+    {
+      "name": "test_api_and_plan_conflicts",
+      "status": "passed",
+      "seconds": 0.892
+    },
+    {
+      "name": "test_claude_isolated_usage_and_cache",
+      "status": "passed",
+      "seconds": 0.17
+    },
+    {
+      "name": "test_facts_and_invalid_calendar",
+      "status": "passed",
+      "seconds": 0.783
+    },
+    {
+      "name": "test_anomaly_and_separate_diagnosis",
+      "status": "passed",
+      "seconds": 1.52
+    },
+    {
+      "name": "test_credentials_rejected_before_graph",
+      "status": "passed",
+      "seconds": 0.208
+    },
+    {
+      "name": "test_level_bound_to_input[\\uc794\\uae08\\uc77c: 2026-11-30\\n\\ub300\\ucd9c \\uc2e4\\ud589 \\uc608\\uc815\\uc77c: 2026-12-02-\\ub192\\uc74c]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\uc794\\uae08\\uc77c: 2026-11-30\\n\\ub300\\ucd9c \\uc2e4\\ud589 \\uc608\\uc815\\uc77c: 2026-11-30-\\ub0ae\\uc74c]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\uc794\\uae08\\uc77c: 2026-02-30-\\ud655\\uc778 \\ubd88\\uac00]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\ubcf4\\uc99d\\uae08: 20,000\\ub9cc\\uc6d0\\n\\ubcf4\\uc99d\\uae08: 210,000,000\\uc6d0-\\ub192\\uc74c]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\ubcf4\\uc99d\\uae08: 20,000\\ub9cc\\uc6d0\\n\\ubcf4\\uc99d\\uae08: 200,000,000\\uc6d0-\\ubcf4\\ud1b5]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\uc784\\ucc28\\uc778\\uc740 \\ubaa8\\ub4e0 \\uc218\\uc120\\ube44\\ub97c \\ubd80\\ub2f4\\ud55c\\ub2e4.-\\uc8fc\\uc758]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\uc784\\ucc28\\uc778\\uc740 \\ubcf4\\uc99d\\uae08 \\ubc18\\ud658\\uc744 \\ud3ec\\uae30\\ud558\\uc9c0 \\uc54a\\ub294\\ub2e4.-\\ud655\\uc778 \\ubd88\\uac00]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_level_bound_to_input[\\uc18c\\uc720\\uc790\\uc640 \\uc784\\ub300\\uc778\\uc774 \\uc77c\\uce58\\ud55c\\ub2e4.-\\ud655\\uc778 \\ubd88\\uac00]",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_korean_deposit_units",
+      "status": "passed",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_report_lifecycle",
+      "status": "passed",
+      "seconds": 0.34
+    },
+    {
+      "name": "test_missing_provider_preserves_report",
+      "status": "passed",
+      "seconds": 0.176
+    }
+  ]
+}

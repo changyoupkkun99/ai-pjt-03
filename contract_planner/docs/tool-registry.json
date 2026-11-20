@@ -1,0 +1,764 @@
+[
+  {
+    "name": "candidates",
+    "description": "계약에 관련된 현행 법령·판례·해석례 후보가 필요할 때",
+    "source": "법제처 국가법령정보센터",
+    "scope": "external",
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "query": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Query",
+          "type": "string"
+        },
+        "kind": {
+          "default": "law",
+          "enum": [
+            "law",
+            "prec",
+            "expc"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "title": "Query",
+      "type": "object"
+    },
+    "output": {
+      "$defs": {
+        "Failure": {
+          "properties": {
+            "code": {
+              "title": "Code",
+              "type": "string"
+            },
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "title": "Failure",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Failure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ok",
+        "source",
+        "basis"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "data_item": {
+      "properties": {
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "id",
+        "title",
+        "kind",
+        "summary"
+      ],
+      "title": "CandidateRow",
+      "type": "object"
+    }
+  },
+  {
+    "name": "detail",
+    "description": "후보의 판본 식별자로 조문·시행일 또는 사건 본문을 확인할 때",
+    "source": "법제처 국가법령정보센터",
+    "scope": "external",
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "api_id": {
+          "pattern": "^\\d{1,12}$",
+          "title": "Api Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "law",
+            "prec",
+            "expc"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "topic": {
+          "enum": [
+            "return",
+            "sign",
+            "risk",
+            "repair"
+          ],
+          "title": "Topic",
+          "type": "string"
+        }
+      },
+      "required": [
+        "api_id",
+        "kind",
+        "topic"
+      ],
+      "title": "Detail",
+      "type": "object"
+    },
+    "output": {
+      "$defs": {
+        "Failure": {
+          "properties": {
+            "code": {
+              "title": "Code",
+              "type": "string"
+            },
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "title": "Failure",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Failure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ok",
+        "source",
+        "basis"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "data_item": {
+      "properties": {
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "effective": {
+          "title": "Effective",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "id",
+        "title",
+        "kind",
+        "text",
+        "effective"
+      ],
+      "title": "EvidenceRow",
+      "type": "object"
+    }
+  },
+  {
+    "name": "holidays",
+    "description": "개인 점검일이 한국 공휴일인지 확인할 때",
+    "source": "Nager.Date",
+    "scope": "external",
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "maximum": 2100,
+          "minimum": 2000,
+          "title": "Year",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "year"
+      ],
+      "title": "Calendar",
+      "type": "object"
+    },
+    "output": {
+      "$defs": {
+        "Failure": {
+          "properties": {
+            "code": {
+              "title": "Code",
+              "type": "string"
+            },
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "title": "Failure",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Failure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ok",
+        "source",
+        "basis"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "data_item": {
+      "properties": {
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "date",
+        "title"
+      ],
+      "title": "HolidayRow",
+      "type": "object"
+    }
+  },
+  {
+    "name": "city",
+    "description": "현장 점검을 요청한 도시의 좌표가 필요할 때",
+    "source": "Open-Meteo Geocoding · GeoNames",
+    "scope": "external",
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "City",
+      "type": "object"
+    },
+    "output": {
+      "$defs": {
+        "Failure": {
+          "properties": {
+            "code": {
+              "title": "Code",
+              "type": "string"
+            },
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "title": "Failure",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Failure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ok",
+        "source",
+        "basis"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "data_item": {
+      "properties": {
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "latitude": {
+          "title": "Latitude",
+          "type": "number"
+        },
+        "longitude": {
+          "title": "Longitude",
+          "type": "number"
+        }
+      },
+      "required": [
+        "url",
+        "title",
+        "latitude",
+        "longitude"
+      ],
+      "title": "CityRow",
+      "type": "object"
+    }
+  },
+  {
+    "name": "weather",
+    "description": "현장 점검 후보일의 일별 강수확률을 확인할 때",
+    "source": "Open-Meteo Forecast",
+    "scope": "external",
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "latitude": {
+          "maximum": 39,
+          "minimum": 33,
+          "title": "Latitude",
+          "type": "number"
+        },
+        "longitude": {
+          "maximum": 132,
+          "minimum": 124,
+          "title": "Longitude",
+          "type": "number"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "title": "Weather",
+      "type": "object"
+    },
+    "output": {
+      "$defs": {
+        "Failure": {
+          "properties": {
+            "code": {
+              "title": "Code",
+              "type": "string"
+            },
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "title": "Failure",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Failure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ok",
+        "source",
+        "basis"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "data_item": {
+      "properties": {
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "rain_percent": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Rain Percent",
+          "type": "number"
+        }
+      },
+      "required": [
+        "url",
+        "date",
+        "rain_percent"
+      ],
+      "title": "ForecastRow",
+      "type": "object"
+    }
+  },
+  {
+    "name": "rag",
+    "description": "계약 특약의 위험이나 법률 근거를 색인에서 찾아야 할 때",
+    "source": "2회차 ChromaDB · BGE-M3",
+    "scope": "local",
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "maxLength": 700,
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "Rag",
+      "type": "object"
+    },
+    "output": {
+      "$defs": {
+        "Failure": {
+          "properties": {
+            "code": {
+              "title": "Code",
+              "type": "string"
+            },
+            "message": {
+              "title": "Message",
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "title": "Failure",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "ok": {
+          "title": "Ok",
+          "type": "boolean"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Failure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ok",
+        "source",
+        "basis"
+      ],
+      "title": "Result",
+      "type": "object"
+    },
+    "data_item": {
+      "properties": {
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "effective": {
+          "title": "Effective",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "id",
+        "title",
+        "kind",
+        "text",
+        "effective"
+      ],
+      "title": "EvidenceRow",
+      "type": "object"
+    }
+  }
+]
